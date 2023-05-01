@@ -1,4 +1,4 @@
-export function taskRequest(req, res) {
+export function taskStoreRequest(req, res) {
   const errors = [];
 
   if (!req.body.title) {
