@@ -3,6 +3,7 @@ import { randomUUID } from 'node:crypto'
 import { buildRoutePath } from "./utils/build-route-path.js";
 import { taskStoreRequest } from "./requests/task-store-request.js";
 import { taskUpdateRequest } from "./requests/task-update-request.js";
+import { readCsv } from "./utils/read-csv.js";
 
 const database = new Database;
 
@@ -124,6 +125,13 @@ export const routes = [
       database.update('tasks', id, { completed_at })
 
       return res.writeHead(200).end()
+    }
+  },
+  {
+    method: 'GET',
+    path: buildRoutePath('/tasks/import/csv'),
+    handler: async () => {
+      readCsv()
     }
   },
 ]

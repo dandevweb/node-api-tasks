@@ -8,5 +8,9 @@
     "dev": "node --watch src/server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^5.3.9",
+    "fs": "^0.0.1-security"
+  }
 }
